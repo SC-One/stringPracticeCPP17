@@ -16,7 +16,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
+CXXFLAGS      = -pipe -g -std=gnu++1z -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../untitled -I. -I../../../../Qt5.13.1/5.13.1/gcc_64/include -I../../../../Qt5.13.1/5.13.1/gcc_64/include/QtCore -I. -I../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/sc/Qt5.13.1/5.13.1/gcc_64/bin/qmake
 DEL_FILE      = rm -f
@@ -230,6 +230,7 @@ DIST          = ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/spec_pre.prf
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/spec_post.prf \
+		../untitled/.qmake.stash \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -435,6 +436,7 @@ Makefile: ../untitled/untitled.pro ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/li
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -630,6 +632,7 @@ Makefile: ../untitled/untitled.pro ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/li
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -693,7 +696,7 @@ compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
 moc_predefs.h: ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/data/dummy.cpp
-	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/data/dummy.cpp
+	g++ -pipe -g -std=gnu++1z -Wall -W -dM -E -o moc_predefs.h ../../../../Qt5.13.1/5.13.1/gcc_64/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all:
 compiler_moc_header_clean:
