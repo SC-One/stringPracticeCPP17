@@ -2,22 +2,26 @@
 #include<QDebug>
 int main()
 {
-    std::string sentence {"Hi guys , I'm here now!"};
-    std::cout<<sentence<<std::endl;
-    size_t sizeLen {(sizeof (sentence)/sizeof (sentence[0]))};
-    for(size_t i=0;i< sizeLen;i++)
-        sentence[i]=std::toupper(sentence[i]);
-    std::cout<<sentence<<std::endl;
-
-    for(size_t i=0;i< sizeLen;i++)
-        sentence[i]=std::tolower(sentence[i]);
-    std::cout<<sentence<<std::endl;
-
-
-    /////////////////////////////////////////////
-    sentence = "Hi guys , I'm here now!" ;
-    for(auto &ch:sentence)
-        ch=std::toupper(ch);
-    std::cout<<sentence<<std::endl;
+    std::string text;
+    unsigned vowels {0},consonant {0};
+    std::cout<<"Insert your Text: ";
+    std::getline(std::cin, text);
+    for(auto &context:text)
+    {
+        if ( std::isalpha(context) /* Or ==> (context<='Z' && context>='A') || (context<='z' && context>='a') */)
+        {
+            switch (std::tolower(context))
+            {
+            case 'a':case'e': case'i': case 'o': case 'u':
+                vowels++;
+                break;
+            default:
+                consonant++;
+                break;
+            }
+        }
+    }
+    std::cout<<"Vowels: "<<vowels<<std::endl;
+    std::cout<<"Consonants: "<<consonant<<std::endl;
     return 0;
 }
