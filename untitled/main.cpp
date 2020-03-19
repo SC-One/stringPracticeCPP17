@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<utility>
 
 int main()
 {
@@ -22,7 +23,7 @@ int main()
         {
             if(*jt < *it)
             {
-                it->swap(*jt);
+                std::swap(*it,*jt);
             }
         }
     }
