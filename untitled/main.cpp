@@ -1,34 +1,32 @@
 #include<iostream>
 #include<string>
-#include<vector>
-#include<utility>
-
 int main()
 {
-    std::vector<std::string> list;
-    char ch{'y'};
-    do
+    std::string text1{"Nope"};
+    std::string text2{"Yeap"};
+    std::string text3{"Nope"};
+    std::cout<<text1<<"<>"<<text2<<"    "<<text1.compare(text2)<<std::endl;         // N<Y          ==> negative
+    std::cout<<text2<<"<>"<<text1<<"    "<<text2.compare(text1)<<std::endl;         // Y>N          ==> Positive
+    std::cout<<text3<<"<>"<<text1<<"    "<<text3.compare(text1)<<std::endl;         // Nope==Nope   ==> Zero
+
+
+    std::string word1{"A jackhammer"};
+    std::string word2{"jack"};
+    int result{word1.compare(2,word2.length(),word2)};
+    if(result==0)
     {
-        std::string movaghat;
-        std::cout<<"Inputer the FullName: ";
-        std::cin>>movaghat;
-        list.push_back(movaghat);
-        std::cout<<"do you want insert more FullNames(y,n): ";
-        std::cin>>ch;
-    }while(std::tolower(ch)=='y');
-    // selectionSort
-    for(std::vector<std::string>::iterator it=list.begin(); it<(list.end()-1);it++)
+        std::cout<<"word1("<<word1<<") contains word2("<<word2<<")"<<std::endl;
+    }
+
+
+    std::string text{"Hamid has brown hair."};
+    std::string word{"brown"};
+    for(size_t i=0;i<(text.length()-word.length()+1);i++)
     {
-        for(std::vector<std::string>::iterator jt=it+1; jt<(list.end());++jt)
+        if(text.compare(i,word.length(),word)==0)
         {
-            if(*jt < *it)
-            {
-                std::swap(*it,*jt);
-            }
+            std::cout<<"atIndex["<<i<<"]: text("<<text<<") contains ("<<word<<")"<<std::endl;
         }
     }
-    for(const auto &namesList:list)
-        std::cout<<namesList<<std::endl;
-    std::cout<<"===============>Ended !"<<std::endl;
     return 0;
 }
