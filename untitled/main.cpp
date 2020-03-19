@@ -26,10 +26,8 @@ int main()
             }
         }
     }
-    for(std::vector<std::string>::iterator it=list.begin(); it<list.end();it++)
-    {
-        std::cout<<*it<<std::endl;
-    }
+    for(const auto &namesList:list)
+        std::cout<<namesList<<std::endl;
     std::cout<<"===============>Ended !"<<std::endl;
     return 0;
 }
