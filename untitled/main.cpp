@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include<vector>
-#include<iomanip>
 int main()
 {
     std::vector<std::string> words;
@@ -26,7 +25,9 @@ int main()
     size_t counter{0};
     for(auto &wd:words)
     {
-        std::cout<<std::setw(static_cast<int>(maxLength+2))<<wd;
+        size_t l=wd.length();
+        wd.insert(l,(maxLength-l+2),' ');
+        std::cout<<wd;
         if((++counter%5)==0)
             std::cout<<std::endl;
     }
