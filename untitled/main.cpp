@@ -3,17 +3,21 @@
 
 int main()
 {
-    std::string sentence {"His son has good brain."};
-    std::string word1 {"good"};
-    std::string word2 {"had"};
-    std::cout<<sentence.find(word1)<<std::endl;
-    std::cout<<sentence.find(word2)<<std::endl;
-    std::cout<<sentence.find("His")<<std::endl;
-    std::cout<<sentence.find("his")<<std::endl;
-    std::cout<<sentence.find('x')<<std::endl;
-
-    // what's std::string::npos
-    if(sentence.find(word2) == std::string::npos)
-        std::cout<<"Not found!"<<std::endl;
+    std::string text;
+    std::string subText;
+    std::cout<<"Insert a text:"<<std::endl;
+    std::getline(std::cin,text);
+    std::cout<<"Insert a word to search in your text: ";
+    std::cin>>subText;
+    int count{0};
+    for(size_t i=0;i<(text.length() - subText.length() + 1);i++)
+    {
+        size_t pos{text.find(subText,i)};
+        if(pos==std::string::npos)
+            break;
+        count++;
+        i=pos+subText.length()-1;
+    }
+    std::cout<<count<<std::endl;
     return 0;
 }
