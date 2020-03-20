@@ -2,23 +2,23 @@
 #include <string>
 int main()
 {
-    std::string text{"I never love you"};
-    std::string textEliminate{"never "};
-    size_t start{text.find(textEliminate)};
-    if(start!=std::string::npos)
-    {
-        text.erase(start,textEliminate.length());
-    }
-    std::cout<<text<<std::endl;
+    /*
+     * std::stoi()          type integer
+     * std::stol()          type long
+     * std::stoll()         longlong
+     * std::stoul()         unsignedlong
+     * std::stoull()        unsignedlonglong
+     * std::stof()          float
+     * std::stod()          double
+     * std::stold()         longdouble
+     */
 
-    text.erase(2);
-    std::cout<<text<<std::endl;
-
-    text.erase();
-    text.append("I love God.");
-    std::cout<<text<<std::endl;
-    text.clear();
-    std::cout<<text<<std::endl;
-
+    std::string s{ "1917" };
+    int i{ std::stoi(s) };      // i == 1917
+    std::cout<<i<<std::endl;
+    s.assign("1.234");
+    double d{std::stod(s)};
+    d/=10;
+    std::cout<<d<<std::endl;
     return 0;
 }
